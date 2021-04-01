@@ -334,8 +334,8 @@ def analyzeOverlapMeasure(df, voxelSize):
                                       'PercentageOfPointsCloserThanRadiusOrigStd',
                                       'PercentageOfPointsCloserThanRadius', 'PercentageOfPointsCloserThanRadiusStd',
                                       'OverlapMeasure', 'OverlapMeasureStd',
-                                      'PercentageOfBifurPointsCloserThanRadiusOrig','PercentageOfBifurPointsCloserThanRadiusOrigStd'
-                                      'PercentageOfBifurPointsCloserThanRadius','PercentageOfBifurPointsCloserThanRadiusStd'
+                                      'PercentageOfBifurPointsCloserThanRadiusOrig','PercentageOfBifurPointsCloserThanRadiusOrigStd',
+                                      'PercentageOfBifurPointsCloserThanRadius','PercentageOfBifurPointsCloserThanRadiusStd',
                                       'averageAngleAtBifur','averageAngleAtBifurStd'])
 
     for i, (ThresholdValue, g) in enumerate(df.groupby(['ThresholdValue'])):
@@ -511,11 +511,11 @@ if __name__ == '__main__':
     subparser.add_argument('dirname_noisyVolume')
     subparser.add_argument('dirname_volume')
     subparser.add_argument('dirname_reconstructed')
-    subparser.add_argument('voxelWidth', type=float)
-    subparser.add_argument('samplingStep', type=float)
-    subparser.add_argument('upperBound', type=float)
-    subparser.add_argument('lowerBound', type=float)
-    subparser.add_argument('K', type=float)
+    subparser.add_argument('voxelWidth', type=float, help="voxel width of the original volume")
+    subparser.add_argument('samplingStep', type=float, help="absolute step size of the sampling")
+    subparser.add_argument('upperBound', type=float, default=1e10, help="only vessels with radius smaller than upperBound are used to compute the measure")
+    subparser.add_argument('lowerBound', type=float, default=0, help="only vessels with radius larger than lowerBound are used to compute the measure")
+    subparser.add_argument('K', type=float, help="Kth percentile in Hausdorff distance")
     subparser.add_argument('--points', default='positions')
     subparser.add_argument('--doOutputHeader', default=False, action='store_true')
     subparser.add_argument('--prependHeaderStr', default="")
