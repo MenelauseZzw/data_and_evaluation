@@ -94,7 +94,7 @@ def readGxlFile(filename):
 
 
     dataset['positions']   = np.reshape(positions, newshape=(-1, 3))
-    dataset['nodeTypes']   = np.array(nodeTypes, dtype=np.string_)
+    dataset['nodeTypes']   = np.array(nodeTypes, dtype=object)
     dataset['indices1']    = np.array(indices1, dtype=np.int)
     dataset['indices2']    = np.array(indices2, dtype=np.int)
     dataset['radiusPrime'] = np.array(radiusesPrime, dtype=np.double)

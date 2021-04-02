@@ -312,8 +312,9 @@ def doComputeOverlapMeasure(args):
     # Hausdorff distance, not average actually
     averageAngleAtBifur = angleErrors[np.argsort(angleErrors)[int(Kth / 100.0 * len(angleErrors)) - 1]]
     # averageAngleAtBifurStd = np.std(angleErrors)
-
-    keyValPairs = [(name, eval(name)) for name in (
+	
+    locs = locals()
+    keyValPairs = [(name, eval(name, locs)) for name in (
     'NumberOfPointsCloserThanRadiusOrig', 'NumberOfPointsOrig', 'NumberOfPointsCloserThanRadius', 'NumberOfPoints',
     'PercentageOfPointsCloserThanRadiusOrig', 'PercentageOfPointsCloserThanRadius', 'OverlapMeasure',
     'NumberOfBifurPointsCloserThanRadiusOrig', 'NumberOfBifurPointsOrig', 'NumberOfBifurPointsCloserThanRadius', 'NumberOfBifurPoints',
@@ -491,8 +492,9 @@ def doComputeConnectivityMeasure(args):
     ConnectivityRatio = np.count_nonzero(closerThanRadiusOrig) * 1.0 / (len(pointsOrig))
 
     FalseRatio = FalseCount * 1.0 / TotalConnectivity
-
-    keyValPairs = [(name, eval(name)) for name in ('FalseRatio', 'ConnectivityRatio', 'TotalConnectivity')]
+    
+    locs = locals()
+    keyValPairs = [(name, eval(name, locs)) for name in ('FalseRatio', 'ConnectivityRatio', 'TotalConnectivity')]
 
     if (doOutputHeader):
         print(prependHeaderStr + (",".join(kvp[0] for kvp in keyValPairs)))
