@@ -369,15 +369,12 @@ def doAnalyzeOurOverlapMeasureCsv(args):
 
     overlapMeasure = pd.DataFrame()
 
-    for i, (ParValue, g) in enumerate(df.groupby(['ParValue'])):
-        g = analyzeOverlapMeasure(g, voxelSize)
-        g.insert(1, 'ParValue', ParValue)
-
-        overlapMeasure = pd.concat((overlapMeasure, g))
+    g = analyzeOverlapMeasure(df, voxelSize)
+    overlapMeasure = pd.concat((overlapMeasure, g))
 
     basename, _ = os.path.splitext(basename)
     filename = os.path.join(dirname, basename + 'Average.csv')
-    overlapMeasure.sort_values(['ThresholdValue', 'ParValue'], inplace=True)
+    overlapMeasure.sort_values(['ThresholdValue'], inplace=True)
     overlapMeasure.to_csv(filename, index=False)
 
 
