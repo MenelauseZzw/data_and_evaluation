@@ -31,7 +31,7 @@ Y-axis: PercentageOfBifurPointsCloserThanRadiusOrig
 ```
 To generate the angular error plot,
 ```
-X-axis: threshold values on Frangi vesselness measure
+X-axis: ThresholdValue
 Y-axis: averageAngleAtBifur
 ```
 
