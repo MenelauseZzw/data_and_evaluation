@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ### How to use the code
 
-To get the ROC curves and angular errors, use the exmaple script [eval.sh](src_evaluation/eval.sh). The input will be the reconstructed tree in H5 file and groundtruth in XML file. [IO2.py](src_evaluation/IO2.py) is for reading from and writing to these files. The output will be the average measure over the 15 volumes and saved in a file named "***Average.csv". This file includes the following variables.
+To obtain the ROC and angular error curves, use the exmaple script [eval.sh](src_evaluation/eval.sh). The input will be the reconstructed tree in H5 format and groundtruth in XML format. The output will be the average measure over the 15 volumes and saved in a file named "***Average.csv". This file contains the following variables.
 
 To generate the "On whole tree" ROC curve,
 ```
