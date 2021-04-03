@@ -4,8 +4,6 @@ Code for generating the dataset and evaluation metrics discussed in [Confluent V
 
 [paper]:https://arxiv.org/abs/2103.14268
 
-## Instructions for data generation
-
 ## Instructions for running the evaluation
 
 ### Python enviroment and dependencies
