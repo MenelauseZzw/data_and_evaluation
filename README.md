@@ -15,7 +15,9 @@ pip install -r requirements.txt
 
 ### How to use the code
 
-To obtain the ROC and angular error curves, use the exmaple script [eval.sh](src_evaluation/eval.sh). The input will be the reconstructed tree in H5 format and groundtruth in XML format. The output will be the average measure over the 15 volumes and saved in a file named "***Average.csv". This file contains the following variables.
+To obtain the ROC and angular error curves, use the exmaple script [eval.sh](src_evaluation/eval.sh). The input will be the reconstructed tree in H5 format (**Our reconstructed trees (corresponding to the green curve below) are provided [here][our_results].**) and groundtruth in XML format. The output will be the average measure over the 15 volumes and saved in a file named "***Average.csv". This file contains the following variables.
+
+[our_results]:https://cs.uwaterloo.ca/~z889zhan/our_results.zip
 
 To generate the "On whole tree" ROC curve,
 ```
@@ -32,8 +34,5 @@ To generate the angular error plot,
 X-axis: ThresholdValue
 Y-axis: averageAngleAtBifur
 ```
-**Our reconstructed trees (corresponding to the green curve below) are provided [here][our_results].**
-
-[our_results]:https://cs.uwaterloo.ca/~z889zhan/our_results.zip
 
 <span align="center"><img src="example.png" alt="" width="800"/></span>
