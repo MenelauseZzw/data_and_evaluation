@@ -32,7 +32,7 @@ To generate the angular error plot,
 X-axis: ThresholdValue
 Y-axis: averageAngleAtBifur
 ```
-Our reconstructed trees (corresponding to the green curve below) are provided [here][our_results].
+**Our reconstructed trees (corresponding to the green curve below) are provided [here][our_results].**
 
 [our_results]:https://cs.uwaterloo.ca/~z889zhan/our_results.zip
 
